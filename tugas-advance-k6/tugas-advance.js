@@ -5,7 +5,7 @@ import { Trend, Rate } from 'k6/metrics'
 
 const productsAllDuration = new Trend('products_all_duration')
 const productsDetailDuration = new Trend('products_detail_duration')
-const ratingRate = new Rate('products_rating_rate_less_than_4.5')
+const ratingRate = new Rate('products_rating_rate_less_than_4_5')
 
 
 export const options = {
