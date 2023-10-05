@@ -7,7 +7,8 @@ import soak_test_scenario from './config/soak_test_scenario.js'
 import spike_test_scenario from './config/spike_test_scenario.js'
 import breakpoint_test_scenario from './config/breakpoint_test_scenario.js'
 import getAuthToken from './utils/getAuthToken.js'
-import withLogin from './groups/withLogin.js'
+import productsWithLogin from './groups/productsWithLogin.js'
+import todosWithLogin from './groups/todosWithLogin.js'
 
 
 const scenarioList = {
@@ -31,7 +32,9 @@ export function setup() {
 }
 
 export default function (token) {
-	withLogin(token)
+	productsWithLogin(token)
+
+	todosWithLogin(token)
 
 	sleep(1)
 }
