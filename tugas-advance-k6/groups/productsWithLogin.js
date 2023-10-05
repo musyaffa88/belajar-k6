@@ -43,24 +43,19 @@ export default function productsWithLogin (token) {
 			})
 		})
 		describe('Menambah produk', function () {
-			const res = http.post('https://dummyjson.com/auth/products/add', generateHeaders(token), products)
-			// const res = http.post('https://dummyjson.com/products/add', headers, products)
-			console.log('Ini log tambah produk ', res.json());
+			const res = http.post('https://dummyjson.com/auth/products/add', products, generateHeaders(token))
 			check(res, {
 				'Respon harus 200': (r) => r.status === 200,
 			})
 		})
 		describe('Mengubah informasi produk', function () {
-			const res = http.patch('https://dummyjson.com/auth/products/1', generateHeaders(token), products)
-			// const res = http.patch('https://dummyjson.com/products/1', headers, products)
-			console.log('Ini log edit produk ', res.json());
+			const res = http.put('https://dummyjson.com/auth/products/1', products, generateHeaders(token))
 			check(res, {
 				'Respon harus 200': (r) => r.status === 200,
 			})
 		})
 		describe('Menghapus produk', function () {
 			const res = http.del('https://dummyjson.com/auth/products/1', generateHeaders(token))
-			// const res = http.del('https://dummyjson.com/products/1')
 			console.log('Ini log hapus produk ', res.json());
 			check(res, {
 				'Respon harus 200': (r) => r.status === 200,

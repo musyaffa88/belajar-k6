@@ -1,6 +1,6 @@
 const products = JSON.stringify({
-  title: "Laptop ADVAN",
-  description: "A ADVAN laptop",
+  title: 'iPhone Galaxy +1',
+  description: 'A apple mobile phone',
 });
 
 export default products

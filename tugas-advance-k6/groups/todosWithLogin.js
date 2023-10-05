@@ -37,15 +37,13 @@ export default function todosWithLogin (token) {
 			})
 		})
 		describe('Menambah todos', function () {
-			const res = http.post('https://dummyjson.com/auth/todos/add', generateHeaders(token), todos)
-			console.log('Ini log tambah todo ', res.json());
+			const res = http.post('https://dummyjson.com/auth/todos/add', todos, generateHeaders(token))
 			check(res, {
 				'Respon harus 200': (r) => r.status === 200,
 			})
 		})
 		describe('Mengubah informasi todos', function () {
-			const res = http.patch('https://dummyjson.com/auth/todos/1', generateHeaders(token), todos)
-			console.log('Ini log edit todo ', res.json());
+			const res = http.put('https://dummyjson.com/auth/todos/1', todos, generateHeaders(token))
 			check(res, {
 				'Respon harus 200': (r) => r.status === 200,
 			})
